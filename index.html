@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My first Vue app</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="index.css.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+</head>
+
+<body>
+
+<div id="app">
+    {{ message }}
+    <button v-on:click="reverseMessage">Message à l'envers</button>
+</div>
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Passez votre souris sur moi pendant quelques secondes
+    pour voir mon titre lié dynamiquement !
+  </span>
+</div>
+
+<div id="app-3">
+    <p v-if="seen">Maintenant vous me voyez</p>
+</div>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <h1> {{ message }} </h1>
+    <input v-model="message">
+</div>
+
+<div id="app-6">
+    <h2> {{message}} </h2>
+    <input v-model="newTitre" type="text" class="update">Titre à modifier
+    <button v-on:click="updateMessage">Mettre à jour le titre</button>
+</div>
+
+<!--<div id="app-7">-->
+<!--    <button @click="active = !active">Passer au rouge</button>-->
+<!--     :class="{red: active}"-->
+
+
+<!--</div>-->
+
+<div id="vue-instance">
+    <span>{{ message }}</span>
+    <ol>
+        <li v-for="x in items">
+            {{ x.title }}
+        </li>
+    </ol>
+
+    <button v-on:click="makeRed" :class="{'red': isRed}">
+        Click Me
+    </button>
+</div>
+<script src='app.js'></script>
+
+
+
+</body>
+</html>
